@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public static Action EnableExit;
 
     [SerializeField] private Vector3 _position = Vector3.up;
-    [SerializeField] private GameObject _prefab;
+    [SerializeField] private GameObject _prefab; 
 
     private GameObject _parent;
     private GameObject _ball;
@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         _parent = GameObject.FindGameObjectWithTag("Level");
+        _position = GameObject.FindGameObjectWithTag("SpawnPoint").transform.position;
         _ball = SpawnBallAtLocation(_position);
     }
 

@@ -37,6 +37,7 @@ public class CameraLookAt : MonoBehaviour
     
     void CameraInit()
     {
+        transform.position = new Vector3(_target.transform.position.x, transform.position.y, _target.transform.position.z - 4f);
         _offset = transform.position - _target.transform.position;
     }
 }
