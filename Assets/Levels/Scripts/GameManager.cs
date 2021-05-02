@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static Action<GameObject> LinkBallToCamera;
-    public static Action ResetUI;
+    public static Action EnableExit;
 
     [SerializeField] private Vector3 _position = Vector3.up;
     [SerializeField] private GameObject _prefab;
@@ -19,19 +20,21 @@ public class GameManager : MonoBehaviour
         _ball = SpawnBallAtLocation(_position);
     }
 
-    private void Start()
-    {
-        AddBallToCamera();
-    }
-
     void OnEnable()
     {
-
+        KeyController.KeyPickedUp += PickedUpKey;
+        DeathPlaneController.Respawn += ReloadScene;
     }
 
     void OnDisable()
     {
+        KeyController.KeyPickedUp -= PickedUpKey;
+        DeathPlaneController.Respawn -= ReloadScene;
+    }
 
+    void Start()
+    {
+        AddBallToCamera();
     }
 
     GameObject SpawnBallAtLocation(Vector3 position)
@@ -42,5 +45,16 @@ public class GameManager : MonoBehaviour
     void AddBallToCamera()
     {
         LinkBallToCamera(_ball);
+    }
+
+    void PickedUpKey()
+    {
+        Debug.Log("Key Picked Up!");
+        EnableExit();
+    }
+
+    void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
