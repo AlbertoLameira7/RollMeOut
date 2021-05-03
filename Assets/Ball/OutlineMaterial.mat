@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BallMaterial
-  m_Shader: {fileID: -6465566751694194690, guid: 370a29398fb448c43b29aa687dc0b216,
+  m_Name: OutlineMaterial
+  m_Shader: {fileID: -6465566751694194690, guid: 88551c4aaedf555409e77576944947d2,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -19,6 +19,13 @@ Material:
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
-    m_Floats: []
-    m_Colors: []
+    m_TexEnvs:
+    - Texture2D_9C9E0809:
+        m_Texture: {fileID: 2800000, guid: d4f581ec589e0ff4ebfcbbbfd3afe9cf, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_2D7D65A4: 0.3
+    - Vector1_BEB429F3: 0.8
+    m_Colors:
+    - Color_29E9E818: {r: 1, g: 1, b: 1, a: 0}

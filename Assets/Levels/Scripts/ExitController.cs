@@ -5,7 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class ExitController : MonoBehaviour
 {
+    public Animator animator;
+    public float transitionTime = 1f;
+
     [SerializeField] private int _sceneToLoad;
+
     private bool _isOpen;
 
     void Awake()
@@ -27,7 +31,8 @@ public class ExitController : MonoBehaviour
     {
         if (other.CompareTag("Ball") && _isOpen)
         {
-            SceneManager.LoadScene(_sceneToLoad);
+
+            StartCoroutine(FadeManager.instance.LoadLevel(_sceneToLoad));
         }
     }
 
