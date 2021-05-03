@@ -24,13 +24,13 @@ public class GameManager : MonoBehaviour
     void OnEnable()
     {
         KeyController.KeyPickedUp += PickedUpKey;
-        DeathPlaneController.Respawn += ReloadScene;
+        PlayerRespawn.Respawn += ReloadScene;
     }
 
     void OnDisable()
     {
         KeyController.KeyPickedUp -= PickedUpKey;
-        DeathPlaneController.Respawn -= ReloadScene;
+        PlayerRespawn.Respawn -= ReloadScene;
     }
 
     void Start()
