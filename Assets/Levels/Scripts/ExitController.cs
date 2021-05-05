@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class ExitController : MonoBehaviour
 {
-    public Animator animator;
     public float transitionTime = 1f;
 
     [SerializeField] private int _sceneToLoad;
@@ -31,7 +30,6 @@ public class ExitController : MonoBehaviour
     {
         if (other.CompareTag("Ball") && _isOpen)
         {
-
             StartCoroutine(FadeManager.instance.LoadLevel(_sceneToLoad));
         }
     }
@@ -39,5 +37,11 @@ public class ExitController : MonoBehaviour
     void OpenExit()
     {
         _isOpen = true;
+        PlayOpenAnimation();
+    }
+
+    void PlayOpenAnimation()
+    {
+        gameObject.GetComponent<Animator>().SetTrigger("OpenPortal");
     }
 }

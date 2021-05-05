@@ -22,8 +22,6 @@ public class SpikeController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collider!");
-
         if (other.CompareTag("Ball"))
         {
             PlayerRespawn.Respawn();
