@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     private GameObject _parent;
     private GameObject _ball;
+    private GameObject _fallingBlock;
 
     void Awake()
     {
@@ -25,12 +26,14 @@ public class GameManager : MonoBehaviour
     {
         KeyController.KeyPickedUp += PickedUpKey;
         PlayerRespawn.Respawn += ReloadScene;
+        FallingBlock.FallingBlockEvent += SelectFallingBlock; 
     }
 
     void OnDisable()
     {
         KeyController.KeyPickedUp -= PickedUpKey;
         PlayerRespawn.Respawn -= ReloadScene;
+        FallingBlock.FallingBlockEvent -= SelectFallingBlock;
     }
 
     void Start()
@@ -52,10 +55,16 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Key Picked Up!");
         EnableExit();
+        Destroy(_fallingBlock);
     }
 
     void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    void SelectFallingBlock(GameObject target)
+    {
+        _fallingBlock = target;
     }
 }
