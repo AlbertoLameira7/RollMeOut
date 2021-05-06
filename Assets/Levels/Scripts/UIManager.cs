@@ -13,6 +13,11 @@ public class UIManager : MonoBehaviour
         StartCoroutine(FadeManager.instance.LoadLevel(1));
     }
 
+    public void StartGame()
+    {
+        StartCoroutine(FadeManager.instance.LoadLevel(2));
+    }
+
     public void ExitGame()
     {
         Application.Quit();

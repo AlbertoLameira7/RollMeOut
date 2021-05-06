@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using System;
 
 public class ExitController : MonoBehaviour
 {
+    public static Action SaveTimer;
     public float transitionTime = 1f;
 
     [SerializeField] private int _sceneToLoad;
@@ -30,6 +31,7 @@ public class ExitController : MonoBehaviour
     {
         if (other.CompareTag("Ball") && _isOpen)
         {
+            SaveTimer();
             StartCoroutine(FadeManager.instance.LoadLevel(_sceneToLoad));
         }
     }

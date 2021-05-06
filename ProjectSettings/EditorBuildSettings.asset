@@ -9,9 +9,24 @@ EditorBuildSettings:
     path: Assets/Levels/MainMenu/MainMenu.unity
     guid: 6c01598a33294614889f07e4db3ef8f3
   - enabled: 1
+    path: Assets/Levels/Tutorial/Tutorial.unity
+    guid: fafd4df55628d6a448874fe191f2c2a6
+  - enabled: 1
     path: Assets/Levels/Level0/Level0.unity
     guid: a232a1e8c27e1d84e87ffd844ee79f91
   - enabled: 1
+    path: Assets/Levels/Level0_5/Level0_5.unity
+    guid: 602a5318f56da6f4e8da446b92f9fc55
+  - enabled: 1
     path: Assets/Levels/Level1/Level1.unity
     guid: d43f5d9f3cf39284badd90cd3bb57059
+  - enabled: 1
+    path: Assets/Levels/Level2/Level2.unity
+    guid: 9a833d80214b3f74cbd899890475021c
+  - enabled: 1
+    path: Assets/Levels/Level3/Level3.unity
+    guid: fa1963f490eb41a409b03d6b005b6e36
+  - enabled: 1
+    path: Assets/Levels/EndScreen/EndScreen.unity
+    guid: 0a151093ede97e24ea21df84c3d5ea18
   m_configObjects: {}
