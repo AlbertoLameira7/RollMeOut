@@ -14,7 +14,8 @@ public class Timer : MonoBehaviour
     void Awake()
     {
         _timer = GameObject.Find("Time").GetComponent<Text>();
-        _count = true;
+        _count = false;
+        StartCoroutine(WaitForSeconds(0.6f));
     }
 
     void OnEnable()
@@ -35,6 +36,12 @@ public class Timer : MonoBehaviour
         }
 
         _timer.text = minutes + ":" + seconds.ToString("F2");
+    }
+
+    IEnumerator WaitForSeconds(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        _count = true;
     }
 
     void StopAndSaveTime()

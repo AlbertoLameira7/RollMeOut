@@ -7,7 +7,7 @@ public class KeyController : MonoBehaviour
 {
     public static Action KeyPickedUp;
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Ball"))
         {

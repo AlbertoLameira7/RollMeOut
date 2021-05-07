@@ -6,6 +6,7 @@ using System;
 public class ExitController : MonoBehaviour
 {
     public static Action SaveTimer;
+    public static Action PlayEndLevelAnimation;
     public float transitionTime = 1f;
 
     [SerializeField] private int _sceneToLoad;
@@ -32,6 +33,7 @@ public class ExitController : MonoBehaviour
         if (other.CompareTag("Ball") && _isOpen)
         {
             SaveTimer();
+            PlayEndLevelAnimation();
             StartCoroutine(FadeManager.instance.LoadLevel(_sceneToLoad));
         }
     }

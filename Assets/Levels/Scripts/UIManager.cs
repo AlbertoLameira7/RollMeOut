@@ -18,6 +18,11 @@ public class UIManager : MonoBehaviour
         StartCoroutine(FadeManager.instance.LoadLevel(2));
     }
 
+    public void MainMenu()
+    {
+        StartCoroutine(FadeManager.instance.LoadLevel(0));
+    }
+
     public void ExitGame()
     {
         Application.Quit();

@@ -26,7 +26,8 @@ public class GameManager : MonoBehaviour
     {
         KeyController.KeyPickedUp += PickedUpKey;
         PlayerRespawn.Respawn += ReloadScene;
-        FallingBlock.FallingBlockEvent += SelectFallingBlock; 
+        FallingBlock.FallingBlockEvent += SelectFallingBlock;
+        ExitController.PlayEndLevelAnimation += PlayEndLevelAnimation;
     }
 
     void OnDisable()
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
         KeyController.KeyPickedUp -= PickedUpKey;
         PlayerRespawn.Respawn -= ReloadScene;
         FallingBlock.FallingBlockEvent -= SelectFallingBlock;
+        ExitController.PlayEndLevelAnimation -= PlayEndLevelAnimation;
     }
 
     void Start()
@@ -66,5 +68,10 @@ public class GameManager : MonoBehaviour
     void SelectFallingBlock(GameObject target)
     {
         _fallingBlock = target;
+    }
+
+    void PlayEndLevelAnimation()
+    {
+        _ball.GetComponent<BallController>().PlayEndLevelAnimation();
     }
 }
